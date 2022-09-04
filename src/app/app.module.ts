@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { ToDoComponent } from './to-do/to-do.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     ToDoComponent
   ],
   imports: [
@@ -15,6 +13,6 @@ import { ToDoComponent } from './to-do/to-do.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ToDoComponent]
 })
 export class AppModule { }
