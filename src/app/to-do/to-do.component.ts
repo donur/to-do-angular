@@ -33,5 +33,9 @@ export class ToDoComponent implements OnInit {
     return this.model.items.filter((item) => !item.action);
   }
 
+  displayCount() {
+    return this.model.items.filter(i => i.action).length;
+  }
+
   ngOnInit(): void {}
 }
