@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Model } from '../model';
 
 @Component({
   selector: 'app-to-do',
@@ -9,20 +10,19 @@ export class ToDoComponent implements OnInit {
 
   constructor() { }
 
-  private name = "Onur";
+   model = new Model();
 
-  // items = [
-  //   "item 1", "item 2", "item 3"
-  // ];
 
-  items = [
-    { id: 1, description: "breakfast", action: "yes" },
-    { id: 2, description: "workout", action: "yes" },
-    { id: 3, description: "shopping", action: "no" }
-  ];
+  
+
+  
 
   getName() {
-    return this.name; 
+    return this.model.name; 
+  }
+
+  getItems() {
+    return this.model.items;
   }
 
   ngOnInit(): void {
