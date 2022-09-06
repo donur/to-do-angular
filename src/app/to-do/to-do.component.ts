@@ -8,9 +8,24 @@ import { Model } from '../model';
 })
 export class ToDoComponent implements OnInit {
 
+  message = "";
+
   constructor() { }
 
    model = new Model();
+
+  //  addItem(txtItem: any) {
+  //   console.log(txtItem.value);
+  //  }
+
+  addItem(value: string) {
+    if(value!= "") {
+      this.model.items.push ({ description: value, action: "no"})
+    } else {
+      alert("Please enter value");
+
+    }
+  }
 
 
   
