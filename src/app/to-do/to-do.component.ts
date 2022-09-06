@@ -4,43 +4,34 @@ import { Model } from '../model';
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
-  styleUrls: ['./to-do.component.scss']
+  styleUrls: ['./to-do.component.scss'],
 })
 export class ToDoComponent implements OnInit {
+  displayAll: boolean = false;
 
-  message = "";
+  constructor() {}
 
-  constructor() { }
+  model = new Model();
 
-   model = new Model();
-
-  //  addItem(txtItem: any) {
-  //   console.log(txtItem.value);
-  //  }
 
   addItem(value: string) {
-    if(value!= "") {
-      this.model.items.push ({ description: value, action: "no"})
+    if (value != '') {
+      this.model.items.push({ description: value, action: false });
     } else {
-      alert("Please enter value");
-
+      alert('Please enter value');
     }
   }
 
-
-  
-
-  
-
   getName() {
-    return this.model.name; 
+    return this.model.name;
   }
 
   getItems() {
-    return this.model.items;
+    if (this.displayAll) {
+      return this.model.items;
+    }
+    return this.model.items.filter((item) => !item.action);
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

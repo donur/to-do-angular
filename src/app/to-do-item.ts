@@ -17,7 +17,7 @@
 
 export interface TodoItem {
     description: string;
-    action: string;
+    action: boolean;
 }
 
 // const toDo = new TodoItem("workout", "yes");
