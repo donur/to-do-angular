@@ -19,26 +19,25 @@ export class ToDoComponent implements OnInit {
 
   addItem() {
     if (this.inputText != '') {
-      let data = {description: this.inputText, action: false}
+      let data = { description: this.inputText, action: false };
       this.model.items.push(data);
 
       let items = this.getItemsFromLocalStorage();
       items.push(data);
-      localStorage.setItem("items", JSON.stringify(items));
-      this.inputText = "";
+      localStorage.setItem('items', JSON.stringify(items));
+      this.inputText = '';
     } else {
-      alert("Please enter value");
+      alert('Please enter value');
     }
   }
 
   getItemsFromLocalStorage() {
     let items: TodoItem[] = [];
 
-    let value = localStorage.getItem("items");
+    let value = localStorage.getItem('items');
 
-    if(value != null){
+    if (value != null) {
       items = JSON.parse(value);
-
     }
 
     return items;
@@ -49,14 +48,13 @@ export class ToDoComponent implements OnInit {
 
     localStorage.clear();
 
-    items.forEach(i => {
-      if(i.description == item.description) {
+    items.forEach((i) => {
+      if (i.description == item.description) {
         i.action = item.action;
       }
     });
 
-    localStorage.setItem("items", JSON.stringify(items));
-
+    localStorage.setItem('items', JSON.stringify(items));
   }
 
   getName() {

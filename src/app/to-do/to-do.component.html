@@ -3,19 +3,14 @@
     <div class="col-5 mx-auto">
       <h3 class="bg-primary text-white p-3">{{ getName() }}' To-Do List</h3>
 
-
       <div class="input-group mb-3">
         <input
           type="text"
           class="form-control"
           [(ngModel)]="inputText"
-          (keyup.enter)="addItem();"
+          (keyup.enter)="addItem()"
         />
-        <button
-          [class]= "getBtnClasses()"
-          class="btn"
-          (click)="addItem();"
-        >
+        <button [class]="getBtnClasses()" class="btn" (click)="addItem()">
           Add
         </button>
       </div>
@@ -70,7 +65,11 @@
                 <ng-template #yesTemplate>Yes</ng-template>
               </td>
               <td>
-                <input type="checkbox" (change)="onActionChanged(item)" [(ngModel)]="item.action" />
+                <input
+                  type="checkbox"
+                  (change)="onActionChanged(item)"
+                  [(ngModel)]="item.action"
+                />
               </td>
             </tr>
           </tbody>
